@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shouye</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+	<style>
+		*{margin: 0px; padding: 0px;}
+		#shouye{position: relative; width: 640px; height: 1136px;  margin: 0px auto;}
+		#shouye .mask{display: none; width: 640px; height: 1136px; background-color: #707b81; opacity: 0.5; filter:alpha(opacity=50);position: absolute; left: 0px; top: 0px;}
+		#shouye .shouye_top{display: block;}
+		#shouye .shouye_main{width: 640px; height: 1008px; background: #fff url(images/bg01.jpg) 0 0 no-repeat;}
+
+		#shouye .shouye_mashang{margin-top: 10px; margin-left: 70px;}
+		#shouye .shouye_zai{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #ddf3fe url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-top: 40px; margin-left: 85px; margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+		#shouye .shouye_buzai{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #ddf3fe url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-left: 85px;
+			margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+		#shouye .shouye_shuoming{display: inline-block; width: 128px; height: 35px; font-size: 30px; line-height: 45px; text-align: center;  margin-left: 236px; color: #00379b; margin-top: 10px; font-weight: 700; cursor: pointer; border-bottom: 1px solid #00379b;}
+		#shouye #huodongshuoming{display: none; width: 510px; height: 628px; padding: 42px 35px 35px 35px; border-radius: 28px; border: 8px solid #022670; position: absolute; left: 20px; top: 246px; background-color: #fff;}
+		#shouye #huodongshuoming h3{color: #0b2b80; font-size: 30px; margin-bottom: 10px; font-weight: 600;}
+		#shouye #huodongshuoming p{text-indent: 2em; font-size: 24px; color: #686868; line-height: 38px; font-weight: 600;}
+		#shouye #huodongshuoming var{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #ddf3fe url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-top: 40px; margin-left: 37px; margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+		#shouye #confirm{display: none; width: 584px; height: 490px; position: absolute; left: 20px; top: 258px; border: 8px solid #022670; border-radius: 28px; background-color: #fff; padding-top: 30px;}
+		#shouye #confirm h3{color: #01256f; text-align: center; font-size: 36px; line-height: 65px;}
+		#shouye #confirm var{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #fff url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-top: 7px; margin-left: 70px; margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+	</style>
+</head>
+<body>
+	<div id="shouye">
+		<div class="mask"></div>
+		<div class="shouye_main">
+			<img src="images/bg02.jpg" alt="" class="">
+			<img src="images/msyl.png" alt="" class="shouye_mashang">
+			<var class="shouye_zai">
+				我在车展 马上拿奖
+			</var>
+			<a href="choujiang.html">
+				<var class="shouye_buzai">不在现场 试试手气</var>
+			</a href="choujiang.html">
+				<var class="shouye_shuoming">活动说明</var>			
+			<div id="huodongshuoming">
+				<h3>活动说明：</h3>
+				<p>
+					抽奖活动哪家强，东风日产看启辰，广州车展期间，启辰君为您准备了多彩铅笔套装、购车代金券、晨风车模、手机话费等精美礼品;
+				</p>
+				<p>
+					车展现场参与活动的用户百分百中奖，留下联系方式更有机会赢取启辰R30、启辰晨风一年使用权大奖;场外用户参与活动也有机会获得话费充值大奖。
+				</p>
+				<p>
+					心动了吗？那就马上行动吧！
+				</p>
+				<p>
+					参与车展现场抽奖活动，中奖礼品只限当天在启辰展台现场兑奖，过时不候哦，详情请咨询启辰展台工作人员。
+				</p>
+				<var>马上抽奖</var>
+			</div>
+			<div id="confirm">
+				<h3>请确定你是否在车车展现场，</h3>
+				<h3>以免无法兑现</h3>
+				<h3>不在车展现场还可抽取话费哦！</h3>
+				<a href="choujiang.html"><var class="queding">确定</var></a>
+				<var class="chongxin">重新选择</var>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="ort.js"></script>
+<script>
+	function setCookie(key,value,days){//设置cookie
+			var dates=new Date();
+			dates.setDate(dates.getDate()+days);
+			document.cookie=key+'='+escape(value)+'; expires='+dates;
+		}
+
+	$(function(){
+		$('#shouye .shouye_shuoming').click(function(){
+			$('#shouye .mask').show();
+			$('#shouye #huodongshuoming').show();
+		})
+
+		$('#shouye .shouye_zai').click(function(){
+			$('#shouye .mask').show();
+			$('#shouye #confirm').show();
+		})
+
+		$('#confirm .chongxin').click(function(){
+			$('#shouye .mask').hide();
+			$('#shouye #confirm').hide();
+		})
+
+		$('#huodongshuoming var').click(function(){
+			$('#shouye .mask').hide();
+			$('#huodongshuoming').hide();
+		})
+
+		$('.shouye_zai').click(function(){
+			setCookie('y',0,7);
+		})
+		$('.shouye_buzai').click(function(){
+			setCookie('y',1,7);
+		})
+		
+	})	
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>场外中奖</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+	<style>
+		*{margin: 0px; padding: 0px;} 
+		#changwaizhjiang{width: 648px; height: 1136px; margin: 0px auto;}
+		#changwaizhjiang .changwaizhjiang_top{display: block;}
+		#changwaizhjiang .changwaizhjiang_main{width: 530px; height: 1008px; background: #fff url(images/bg01.jpg) 0 0 no-repeat;padding: 0px 55px;}
+		#changwaizhjiang .changwaizhjiang_main h2{font-size: 50px; color: #cc0033; text-align: center; padding: 30px 0px;}
+		#changwaizhjiang .changwaizhjiang_main p{font-size: 27px; color: #666666;}		
+		#changwaizhjiang .changwaizhjiang_main .chongzhika{display: none;}
+		#changwaizhjiang .changwaizhjiang_main .show{display: block; margin: 20px auto;}
+		#changwaizhjiang .changwaizhjiang_main .shouji{display: block; margin: 10px 0px; width: 452px; padding-left: 100px; height: 87px; font-size: 30px; color: #999999; background: #fff url(images/shuru2.jpg) 0 0 no-repeat;}
+		#changwaizhjiang .changwaizhjiang_main var{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #ccccff url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-top: 7px; margin-left: 70px; margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+		#changwaizhjiang .changwaizhjiang_main h5{height: 70px;}
+		#changwaizhjiang .changwaizhjiang_main span{font-size: 30px; color: #666666; line-height: 70px; float: left;}
+
+		
+	</style>
+</head>
+<body>
+	<div id="changwaizhjiang">
+		<div class="changwaizhjiang_main">
+			<h2>人品不错哦！</h2>
+			<p>
+				恭喜您抽中价值30元的手机话费！请留下联系方式，24小时内话费将为您送上，请留意短信，谢谢！
+			</p>
+			<img src="images/y10.png" alt="" class="chongzhika show">
+			<img src="images/y20.png" alt="" class="chongzhika">
+			<img src="images/y30.png" alt="" class="chongzhika">
+			<p>请输入手机号码24小时之内为您充值</p>
+			<input type="text" class="shouji" value="请输入手机号">
+			<var>确认提交</var>
+			<h5>
+				<span>&nbsp;分享好友积攒人气：</span>
+				<img src="images/weixin.png" alt="">
+				<img src="images/xlwb.png" alt="">
+				<img src="images/txwb.png" alt="">
+			</h5>
+		</div>
+	</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="ort.js"></script>
+<script>
+	$(function(){
+		$('.changwaizhjiang_main .shouji').focus(function(){
+			if ($('.changwaizhjiang_main .shouji').val()=='请输入手机号'||$('.changwaizhjiang_main .shouji').val()=='') {
+				$('.changwaizhjiang_main .shouji').val('');
+			};
+		})
+		$('var').click(function(){
+			alert('提交成功，等钱吧！')
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>现场留资</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+	<style>
+		*{margin: 0px; padding: 0px;}
+		#liuzi{position: relative; width: 648px; height: 1136px; margin: 0px auto;}
+		#liuzi .mask{display: none; width: 640px; height: 1136px; background-color: #707b81; opacity: 0.5; filter:alpha(opacity=50);position: absolute; left: 0px; top: 0px;}
+		#liuzi .liuzi_top{display: block;}
+		#liuzi .liuzi_main{width: 600px; height: 1008px; background: #fff url(images/bg01.jpg) 0 0 no-repeat; padding: 0px 20px;}
+		#liuzi .liuzi_main .main_top{display: block; margin: 0px auto; padding: 30px 0px;}
+		#liuzi .liuzi_main p{font-size: 26px; color: #666666; line-height: 60px;}
+		#liuzi .liuzi_main .xingming{display: block; margin-top: 20px; width: 492px; height: 86px; margin-bottom: 10px; background: #fff url(images/shuru1.jpg) 0 0 no-repeat; padding-left: 100px; border: 0px; color: #999999; font-size: 30px;}
+		#liuzi .liuzi_main .shoujihao{display: block; margin-bottom: 20px; width: 492px; height: 86px; background: #fff url(images/shuru2.jpg) 0 0 no-repeat; padding-left: 100px; border: 0px; color: #999999; font-size: 30px;}
+		#liuzi .liuzi_main var{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #fff url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-top: 7px; margin-left: 50px; margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+		#liuzi .liuzi_main em{display: inline-block; width: 128px; height: 35px; font-size: 30px; line-height: 45px; text-align: center;  margin-left: 236px; color: #00379b; margin-top: 10px; font-weight: 700; cursor: pointer; border-bottom: 1px solid #00379b;}
+		#liuzi .liuzi_main h5{height: 70px; margin-top: 30px;}
+		#liuzi .liuzi_main h5 span{font-size: 30px; color: #666666; line-height: 70px; float: left;}
+		#liuzi #huodongguize{display: none; position: absolute; top: 158px; left: 20px; width: 530px; height: 746px; border: 8px solid #003366; border-radius: 30px; padding: 50px 25px 24px 25px; background-color: #fff;}
+		#liuzi #huodongguize h3{font-size: 30px; color: #003366;}
+		#liuzi #huodongguize h4{font-size: 24px; color: #666666; line-height: 38px;}
+	</style>
+</head>
+<body>
+	<div id="liuzi">
+		<div class="mask"></div>
+		<img src="images/12_01.jpg" alt="" class="liuzi_top">
+		<div class="liuzi_main">
+			<img src="images/qckhj.png" alt="" class="main_top">
+			<p>
+				考验人品的时候到了，只要留下您的姓名和联系方式就有机会抽取启辰R30、启辰晨风一年使用权大奖。
+			</p>
+			<!-- <img src="images/shuru1.jpg" alt="" class="xingming">
+			<img src="images/shuru2.jpg" alt="" class="shoujihao"> -->
+			<input type="text" value="请输入姓名" class="xingming">
+			<input type="text" value="请输入手机号码" class="shoujihao">
+			<var class="tijiao">提交</var>
+			<em>活动规则</em>
+			<h5>
+				<span>&nbsp;分享好友积攒人气：</span>
+				<img src="images/weixin.png" alt="">
+				<img src="images/xlwb.png" alt="">
+				<img src="images/txwb.png" alt="">
+			</h5>
+			<div id="huodongguize">
+				<h3>活动规则:</h3>
+				<h4>1、活动车展期间：关注启辰官方微信，参与“马上有礼，启辰放送”活动并留下本人姓名及手机号码，即可参加</h4><br>
+				<h4>2、11月21至11月29日，每天抽奖一台启辰R30一年使用权大奖(现场兑奖)。11月29日抽取终极大奖！一台启辰晨风一年使用权</h4><br>
+				<h4>3、每天16:00对当天所有参与者进行抽奖，抽中的参与者若不在现场，将取消中奖者资格并继续抽奖(启辰晨风一年使用权除外)。</h4><br>
+				<h4>4、终极大奖从车展期间所有参与者中抽奖，后续联系进行兑奖。</h4><br>
+				<h4>5、持此活动仅限参与一次;</h4><br>
+				<h4>6、本次活动最终解释权归东风日产启辰所有。</h4><br>
+				<var>知道了</var>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="ort.js"></script>
+<script>
+	$(function(){
+		$('.liuzi_main em').click(function(){
+			$('#liuzi .mask').show();
+			$('#liuzi #huodongguize').show();
+		})
+
+		$('#huodongguize var').click(function(){
+			$('#liuzi .mask').hide();
+			$('#liuzi #huodongguize').hide();
+		})
+
+		
+		$('.liuzi_main .xingming').focus(function(){
+			if ($('.liuzi_main .xingming').val()=='请输入姓名'||$('.liuzi_main .xingming').val()=='') {
+				$('.liuzi_main .xingming').val('');
+			} 
+			
+		})
+
+		$('.liuzi_main .shoujihao').focus(function(){
+			if ($('.liuzi_main .shoujihao').val()=='请输入手机号码'||$('.liuzi_main .shoujihao').val()=='') {
+				$('.liuzi_main .shoujihao').val('');
+			};
+		})
+
+		$('.tijiao').click(function(){
+			alert('提交成功，回家等钱吧！')
+		})
+		
+	})
+</script>
+</html>

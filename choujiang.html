@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>抽奖</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+	<style>
+		*{margin: 0px; padding: 0px;}
+		#choujiang{width: 648px; height: 1136px; margin: 0px auto;}
+		#choujiang .choujiang_top{display: block;}
+		#choujiang .choujiang_main{width: 640px; height: 1008px; background: #fff url(images/bg01.jpg) 0 0 no-repeat;}
+		#choujiang .choujiang_main h3{font-size: 50px; color: #062e73; text-align: center; margin-top: 15px;}
+		#choujiang .choujiang_main h4{font-size: 30px; text-align: center; color: #646464; margin-top: 10px;}
+		#choujiang .choujiang_main .choujiang_img{overflow: hidden; width: 606px; margin: 0px auto; margin-top: 20px; list-style: none; -webkit-transform-style:preserve-3d;}
+		#choujiang .choujiang_main .choujiang_img li{width: 200px; float: left; height: 250px;}
+		#choujiang .choujiang_main .choujiang_img li img{display: block; cursor: pointer; width: 180px; margin: 0px auto; height: 250px; -webkit-transition: all 0.5s 0s linear; -ms-transition: all 0.5s 0s linear; -o-transition: all 0.5s 0s linear; transition: all 0.5s 0s linear;}
+		#choujiang .choujiang_main .choujiang_img li img:hover{-webkit-transform: rotateY(180deg); -ms-transform: rotateY(180deg); transform: rotateY(180deg); -o-transform: rotateY(180deg);}
+	</style>
+</head>
+<body>
+	<div id="choujiang">
+		<div class="choujiang_main">
+			<img src="images/bg02.jpg" alt="" class="">
+			<h3>幸运“触”手可及</h3>
+			<h4>轻触任一款启辰车型牌可参与抽奖</h4>
+			<ul class="choujiang_img">
+				<li><img src="images/qc_01.png" alt=""></li>
+				<li><img src="images/qc_02.png" alt=""></li>
+				<li><img src="images/qc_03.png" alt=""></li>
+				<li><img src="images/qc_04.png" alt=""></li>
+				<li><img src="images/qc_05.png" alt=""></li>
+				<li><img src="images/qc_06.png" alt=""></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="ort.js"></script>
+<script>
+	$(function(){
+		
+		function setCookie(key,value,days){//设置cookie
+			var dates=new Date();
+			dates.setDate(dates.getDate()+days);
+			document.cookie=key+'='+escape(value)+'; expires='+dates;
+		}
+
+		function getCookie(key){//获取cookie
+			var arr=unescape(document.cookie).split('; ');
+			for (var i = 0; i < arr.length; i++) {
+				var arr2=arr[i].split('=');
+				if (arr2[0]==key) {
+					return arr2[1];//返回的结果
+				};
+			};
+			return false;
+		}
+
+		function rmCookie(key){//删除cookie
+			setCookie(key,'1',-1);
+		}
+
+		$('.choujiang_img li').click(function(){
+			if (getCookie('y')==0) {
+				if (getCookie('x')) {
+					var timer3=setTimeout(function(){
+						location.href='yichoujiang.html';
+					},1000)					
+				}else{
+					setCookie('x',1,7)
+					var tar=$('.choujiang_img li').index(this);
+					// $('.choujiang_img li img').eq(tar).css('webkitTransform','rotateZ(-180deg)');
+					var sjshu=Math.random();
+					setCookie('suijishu',sjshu,30);
+					
+					$('.choujiang_img li img').eq(tar).animate({width:'198px',height:'250px'});
+					var timer2=setTimeout(function(){
+						if (sjshu>0.5) {
+							location.href='changneizhongjiang.html';
+						} else{
+							location.href='weizhongjiang.html';
+						};
+					},1000)
+					
+				};	
+			}else{
+				if (getCookie('x')) {
+					location.href='yichoujiang.html';
+				}else{
+					setCookie('x',1,7)
+					var tar=$('.choujiang_img li').index(this);
+					$('.choujiang_img li img').eq(tar).css('webkitTransform','rotateZ(-180deg)');
+					var sjshu=Math.random();
+					setCookie('suijishu',sjshu,30);
+					// alert(getCookie('suijishu'));
+					// $('.choujiang_img li img').eq(tar).animate({width:'198px',height:'250px'});
+					// var timer1=setTimeout(function(){
+					// 	if (sjshu>0.5) {
+					// 		location.href='changwaizhongjiang.html';
+					// 	} else{
+					// 		location.href='weizhongjiang.html';
+					// 	};
+					// },1000)
+					
+				};	
+			};	
+		})
+
+	})
+	
+</script>
+</html>

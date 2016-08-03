@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>场内中奖</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+	<style>
+		*{margin: 0px; padding: 0px;}
+		#changneijieguo{position: relative; width: 648px; height: 1136px; margin: 0px auto;}
+		#changneijieguo .mask{display: block; width: 640px; height: 1136px; background-color: #707b81; opacity: 0.5; filter:alpha(opacity=50);position: absolute; left: 0px; top: 0px;}
+		#changneijieguo .changneijieguo_top{display: block;}
+		#changneijieguo .changneijieguo_main{width: 600px; height: 1008px; background: #fff url(images/bg01.jpg) 0 0 no-repeat;padding: 0px 20px;}
+		#changneijieguo .changneijieguo_main h3{font-size: 39px; color: #003366; text-align: center; padding: 20px 0px; font-weight: 700;}
+		#changneijieguo .changneijieguo_main_con{width: 595px; height: 480px; margin: 10px auto; background-color: #fff; overflow: hidden;}
+		#changneijieguo .changneijieguo_main .changneijieguo_main_con h4{font-size: 26px; color: #666666; text-align: center;  padding: 20px 0px;}
+		#changneijieguo .changneijieguo_main_con em{display: block; height: 75px; background: #fff url(images/bg03.jpg) 55px 0 no-repeat; letter-spacing: 67px; color: #fff; text-align: center; line-height: 75px; font-size: 30px;}
+		#changneijieguo .changneijieguo_main h4{font-size: 30px; color: #003366;}
+		#changneijieguo .changneijieguo_main_con img{display: block; width: 485px; margin: 40px auto;}
+		#changneijieguo .changneijieguo_main p{font-size: 24px; color: #666666; line-height: 30px; margin: 5px 0px;}
+		#changneijieguo .changneijieguo_main var{display: inline-block; width: 433px; height: 97px; line-height: 97px; text-align: center; background: #fff url(images/btn01.png) 0 0 no-repeat; font-size: 30px; color: #fafff9; margin-top: 7px; margin-left: 70px; margin-bottom: 20px; font-weight: 700; cursor: pointer;}
+		#changneijieguo .changneijieguo_main .fenxiang{height: 70px;}
+		#changneijieguo .changneijieguo_main .fenxiang span{font-size: 30px; color: #666666; line-height: 70px; float: left;}
+		#changneijieguo .changneijieguo_main .fenxiang img{vertical-align: center;}
+		#changneijieguo #share{position: absolute; left: 0px; top: 128px;}
+		.jiathis_style_32x32{float: left; margin-top: 17px;}
+	</style>
+</head>
+<body>
+	<div id="changneijieguo">
+		<div class="mask"></div>
+		<div class="changneijieguo_main">
+			<h3>恭喜您，启辰车模已经属于您了！</h3>
+			<div class="changneijieguo_main_con">
+				<h4>请保持在本页面，凭页面代码到展台领取礼品！</h4>
+				<em>QC001</em>
+				<img src="images/qc_07.jpg" alt="">
+			</div>
+			<h4>不够过瘾？</h4>
+			<p>那么请留下你的联系方式，就有机会抽取启辰启辰R30晨风一年使用权大奖哦！</p>
+			<var>启辰开回家</var>
+			<div class="fenxiang">
+				<span>&nbsp;分享好友积攒人气：</span>
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_weixin"></a>
+				</div>
+				<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+				<!-- JiaThis Button END -->
+			</div>
+		</div>
+		<img src="images/share_pop.png" alt="" id="share">
+	</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="ort.js"></script>
+<script>
+	$(function(){
+		$('body').click(function(){
+			$('#changneijieguo .mask').hide();
+			$('#changneijieguo #share').hide();
+		})
+		$('var').click(function(){
+			// location.href='xianchangliuzi.html';
+			open('xianchangliuzi.html');
+		})
+	})
+
+</script>
+</html>
